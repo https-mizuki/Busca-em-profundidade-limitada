@@ -17,6 +17,18 @@ int eh_primo(int x){
     return 1;
 }
 
+void imprimecaminho(int profundidade){
+    printf("[")
+    for (int i = 0; i < profundidade; i ++){
+        printf("%d", caminho[i]);
+        if(i<profundidade){
+            printf(" -> ");
+        }
+    }
+    printf("]")
+}
+
+
 int caminhovisitado(int estado, int profundidade){
     for (int i = 0; i<profundidade; i++){
         if(caminho[i] == estado){
