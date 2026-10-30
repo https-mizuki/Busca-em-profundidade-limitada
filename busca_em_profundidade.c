@@ -6,6 +6,8 @@
 #define limite 4
 #define estado_max 100
 #define estado_min 1
+#define ESQ (-2)
+#define DIR (+5)
 // variaveis globais
 int caminho[tam]; //caminho da raiz ate o atual 
 int prof_final = -1; //em qual camada de profundidade a solucao foi achada
@@ -76,8 +78,8 @@ int buscaprofundidade(int estado, int profundidade){
     }    
 
     //gerando filhos do no expandido 
-    filhos[0] = estado -2;
-    filhos[1] =  estado +5;
+    filhos[0] = estado + ESQ;
+    filhos[1] =  estado + DIR;
 
     // validacao dos dados para que dir ou esq <1 ou >100, nao podera acontecer
     for (int i = 0; i < 2; i++){
