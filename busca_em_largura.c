@@ -79,6 +79,12 @@ int main(){
             // produzir nos filhos
             esq = vet[0] + ESQ;
             dir = vet[0] + DIR;
+            // remover o n visitado da fila + gerenciar a fila�
+            for (i = 0 ; i<tam-1; i++){
+                vet[i] = vet[i+1];
+                
+            }
+            vet[tam-1] = -1;
             // verificar se algum filho gerado esta abaixo de 1 ou acima de 100, e nao adicionar
             if (verifica(esq) == 0){
                 if (ja_visitado(esq)){
@@ -123,12 +129,6 @@ int main(){
                 }
             }
            historico(vet[0]);
-            // remover o n visitado da fila + gerenciar a fila�
-            for (i = 0 ; i<tam-1; i++){
-                vet[i] = vet[i+1];
-                
-                }
-            vet[tam-1] = -1;
 
             printf("[");
 
